@@ -1,0 +1,24 @@
+{
+  "name": "wp-on-routes",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "description": "WordPress plugin that adds API-like functionality by allowing you to add custom routes",
+  "homepage": "http://github.com/markzero/wp-on-routes",
+  "authors": [
+    {
+      "name": "Marko Jakic",
+      "email": "hi@markojakic.net",
+      "homepage": "http://markojakic.net/"
+    }
+  ],
+  "keywords": [
+    "wordpress", "route", "API", "REST", "restful", "params"
+  ],
+  "support": {
+    "issues": "https://github.com/markzero/wp-on-routes/issues"
+  },
+  "require": {
+    "php": ">=5.3.0",
+    "composer/installers": "~1.0"
+  }
+}
