@@ -1,0 +1,30 @@
+
+//exit;
+
+//add_filter('request', 'wor_request', 100, 1);
+
+function wor_request($req) {
+  WoR::get_instance()->path = $_SERVER['REQUEST_URI'];
+  return $req;
+}
+
+
+function my_page_template_redirect() {
+  $path = _u::find(
+    array_keys(WoR::$routes),
+    function($el) {
+      return $el === WoR::get_instance()->path;
+    }
+  );
+
+  if (!$path) {
+    return;
+  }
+
+  header("HTTP/1.1 200 Ok");
+  wp_enqueue_script('jquery');
+  
+  echo WoR::$routes[$path];
+
+  exit;
+}
