@@ -23,7 +23,13 @@ $routing->add_routes(
   array(
     'get' => array(
       'path' => '/foo/bar',
-      'body' => 'Hello Buz!'
+      'body' => 'Hello Buz!',
+      'headers' => array(
+        'Content-Type' => 'text/html; charset=UTF-8',
+        'exclude' => array(
+          'x-powered-by', 'x-pingback'
+        )
+      )
     )
   )
 );
