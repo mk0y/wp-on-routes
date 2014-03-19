@@ -9,13 +9,18 @@ class Template {
     $route = Route::filter_by_request();
     if (\_u::isEmpty($route)) return;
 
-    $route->headers->set_all();
-    if ($route->path->params) $route->path->set_params();
+    if ($route->headers) {
+      $route->headers->set_all();
+    }
+
+    if ($route->path->params) {
+      $route->path->set_params();
+    }
 
     isset($route->action) ?
       do_action($route->action)
       : (
-        !\_u::isEmpty($route->body) ?
+        !isset($route->body) ?
           print($route->body)
           :
           print('Unknown output.')

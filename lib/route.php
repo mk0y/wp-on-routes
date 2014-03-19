@@ -4,6 +4,7 @@ namespace WoR;
 class Route {
   private $method;
   private $path;
+  private $headers;
   private $agent;
   private $real_agent;
   private $body;

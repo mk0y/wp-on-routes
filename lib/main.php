@@ -41,7 +41,7 @@ class Main {
       $route = new Route($items);
       $route->method  = new Method($method);
 
-      if (\_u::isArray($items['headers'])) {
+      if (isset($items['headers']) && is_array($items['headers'])) {
         $route->headers = Headers::set_for_route($items['headers']);
       }
 
