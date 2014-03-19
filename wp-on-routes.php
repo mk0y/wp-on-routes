@@ -37,6 +37,12 @@ if (defined('WP_INSTALLING') && WP_INSTALLING) {
 define('WOR_VERSION', '0.1.0');
 define('WOR_PATH', dirname(__FILE__));
 
+if (version_compare(PHP_VERSION, "5.3", "<")) {
+  require_once(WOR_PATH . '/admin/notices.php');
+  add_action('admin_notices', 'wor_phpversion');
+  return;
+}
+
 // For common use, Underscore.php provides much of the Underscore.js functionality
 // Goal is to write less ifs and fors
 // Edite by me: 1) add 'static' keywords to avoid notices
