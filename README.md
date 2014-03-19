@@ -35,6 +35,20 @@ $routing->add_routes(
 );
 ```
 
+Naturally, you have to check for class existence (e.g. in `lib/routes.php` file):
+
+```php
+if (!class_exists('\WoR\Main')) {
+  return;
+}
+```
+
+And use it in `functions.php`:
+
+```php
+require_once('lib/routes.php');
+```
+
 Remember, because of using namespaces your PHP installation version must be [>= 5.3.0](http://www.php.net/manual/en/language.namespaces.rationale.php).
 
 Extended Usage
