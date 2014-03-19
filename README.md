@@ -39,5 +39,5 @@ At this point there are several capabilities:
 1. Method declaration: GET, POST, DELETE, etc. In place where `'get'` is set.
 2. Defining path like in example above.
 3. Action callback: instead of `'body'` you can have `'action'` which will call any action defined by `add_action`. If both are defined, `action` takes precedence over `body`.
-4. Define `headers` as new array.
+4. Define/exclude `headers` as new array.
 5. Add / filter by agents.
