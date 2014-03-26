@@ -3,10 +3,10 @@ namespace WoR;
 
 class Method {
   private $value;
-  public static $methods = array(
+  public static $methods = [
     // add your own here
     'get', 'post', 'delete', 'put', 'patch'
-  );
+  ];
 
   function __construct($method) {
     $this->value = strtolower($method);
