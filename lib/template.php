@@ -7,7 +7,7 @@ class Template {
 
   public static function delegate() {
     $route = Route::filter_by_request();
-    if (\_u::isEmpty($route)) return;
+    if (!$route || \_u::isEmpty($route)) return;
 
     if ($route->headers) {
       $route->headers->set_all();

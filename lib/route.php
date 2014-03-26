@@ -32,6 +32,7 @@ class Route {
 
   public static function filter_by_request() {
     $routes = Main::get_instance()->routes;
+    if (!$routes) return;
 
     return \_u::find($routes, function($route) {
       return $route->method->equalsCurrent() &&
