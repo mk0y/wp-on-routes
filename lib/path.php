@@ -20,8 +20,8 @@ class Path {
   }
 
   /**
-   * Matches params from defined params
-   * @return boolean Matched params
+   * Matches with defined params
+   * @return boolean Matched all params
    */
   public function matchParams() {
     if ($this->is_home &&
@@ -31,18 +31,14 @@ class Path {
 
     $path_dirs = Main::get_instance()->current_request->path->dirs;
 
-    // until optional params developed
-    if (count($path_dirs) != count($this->dirs)) {
-      return false;
-    }
-
+    // every piece of defined path is compatible with current path
     return \_u::every($this->dirs, function($dir, $index) use ($path_dirs) {
-      if ($dir === $path_dirs[$index]) {
+      if (isset($path_dirs[$index]) && $dir === $path_dirs[$index]) {
         return true;
       }
 
-      if (Path::is_param($dir)) {
-        $this->add_param(trim($dir, ':'), $path_dirs[$index]);
+      if (isset($path_dirs[$index]) && Path::is_param($dir)) {
+        $this->add_param(trim($dir, ':?'), $path_dirs[$index]);
         return true;
       }
 
@@ -56,10 +52,10 @@ class Path {
    * @return boolean
    */
   public static function is_param($param) {
-    preg_match('/\:\w+/', $param, $matches_param);
+    preg_match('/\:\w+\??/', $param, $matches_param);
 
     $is = is_array($matches_param) && count($matches_param) == 1 &&
-      \_u::isString($matches_param[0]) &&
+      is_string($matches_param[0]) &&
       $matches_param[0][0] == ':' ?
         true : false;
 

@@ -35,6 +35,8 @@ class Main {
   }
 
   public function add_routes($routes) {
+    $self = $this;
+
     \_u::each($routes, function($items, $method) {
       if (!Method::has_method(strtolower($method))) continue;
 
@@ -45,7 +47,7 @@ class Main {
         $route->headers = Headers::set_for_route($items['headers']);
       }
 
-      $this->routes[] = $route;
+      $self->routes[] = $route;
     });
   }
 
