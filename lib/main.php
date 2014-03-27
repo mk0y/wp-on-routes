@@ -34,8 +34,13 @@ class Main {
     ));
   }
 
-  public function add_routes($routes) {
-    \_u::each($routes, function($items, $method) {
+  public function add_routes() {
+    $routes = func_get_args();
+
+    \_u::each($routes, function($route, $index) {
+      $method = key($route);
+      $items = $route[$method];
+
       if (!Method::has_method(strtolower($method))) continue;
 
       $route = new Route($items);
