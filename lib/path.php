@@ -31,12 +31,11 @@ class Path {
 
     $path_dirs = Main::get_instance()->current_request->path->dirs;
 
-    // until optional params developed
-    if (count($path_dirs) != count($this->dirs)) {
-      return false;
-    }
-
     return \_u::every($this->dirs, function($dir, $index) use ($path_dirs) {
+      if (!isset($path_dirs[$index]) && Path::is_param($dir, true)) {
+        return true;
+      }
+
       if ($dir === $path_dirs[$index]) {
         return true;
       }
@@ -55,11 +54,12 @@ class Path {
    * @param string
    * @return boolean
    */
-  public static function is_param($param) {
-    preg_match('/\:\w+/', $param, $matches_param);
+  public static function is_param($param, $optional = false) {
+    $optional ? preg_match('/\:\w+\??/', $param, $matches_param) :
+      preg_match('/\:\w+/', $param, $matches_param);
 
     $is = is_array($matches_param) && count($matches_param) == 1 &&
-      \_u::isString($matches_param[0]) &&
+      is_string($matches_param[0]) &&
       $matches_param[0][0] == ':' ?
         true : false;
 
