@@ -36,12 +36,16 @@ class Path {
         return true;
       }
 
+      if (!isset($path_dirs[$index])) {
+        return false;
+      }
+
       if ($dir === $path_dirs[$index]) {
         return true;
       }
 
       if (Path::is_param($dir)) {
-        $this->add_param(trim($dir, ':'), $path_dirs[$index]);
+        $this->add_param(trim($dir, ':?'), $path_dirs[$index]);
         return true;
       }
 
@@ -55,7 +59,7 @@ class Path {
    * @return boolean
    */
   public static function is_param($param, $optional = false) {
-    $optional ? preg_match('/\:\w+\??/', $param, $matches_param) :
+    $optional ? preg_match('/\:\w+\?/', $param, $matches_param) :
       preg_match('/\:\w+/', $param, $matches_param);
 
     $is = is_array($matches_param) && count($matches_param) == 1 &&
