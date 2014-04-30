@@ -16,6 +16,14 @@ This plugin adds API-like functionality to your WordPress instance.
 
 
 
+== Installation ==
+
+Good old plugin installation applies here too - download it / clone it to plugins/ dir, activate.
+
+No UI involved.
+
+
+
 == Description ==
 
 This plugin allows you to:
