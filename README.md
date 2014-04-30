@@ -75,6 +75,22 @@ $routing->add_routes(
 );
 ```
 
+In example above, browser will answer with HTTP status 200, with following code, with header and footer included:
+
+```
+array (size=2)
+  'p1' => string 'test' (length=4)
+  'splats' => 
+    array (size=1)
+      0 => string 'a/b/c' (length=5)
+```
+
+
+
+
+Details
+===
+
 At this point there are several capabilities:
 
 1. Add custom routes to your WordPress installation
