@@ -95,4 +95,4 @@ Options you can set:
 3. `agent` (string/regex)
 4. `include_template` (boolean; default: false)
 5. `headers` (array)
-5.1 `exclude` (array)
+  5.1 `exclude` (array)
