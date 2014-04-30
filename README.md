@@ -87,7 +87,9 @@ At this point there are several capabilities:
 8. Agent filter for negative logic (e.g. `/^((?!Firefox).)*$/`, which tells "every browser except Firefox")
 9. Include header and footer
 
+
 Options you can set:
+
 1. `path` (string)
 2. `body` OR `action` (string)
 3. `agent` (string/regex)
