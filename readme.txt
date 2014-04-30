@@ -10,10 +10,12 @@ Tested up to: 3.9
 
 Stable tag: 0.1.0
 
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 
 
 This plugin adds API-like functionality to your WordPress instance.
-
 
 
 == Installation ==
@@ -26,13 +28,9 @@ No UI involved.
 
 == Description ==
 
-This plugin allows you to:
-1. Add custom routes to your WordPress installation
-2. Set method GET/POST/DELETE etc.
-3. Set body (as text, or template) or action (using add/do_action). If both are defined, `action` takes precedence over `body`.
-4. Set header (e.g. 'Content-Type' => 'text/html; charset=UTF-8')
-5. Exclude header (e.g. 'Set-Cookie')
-6. Set parameter like '/my/route/:param1/:param2'
-7. Add agents or filter by agents, using regular expressions
-8. Agent filter for negative logic (e.g. /^((?!Firefox).)*$/, which tells "every browser except Firefox")
-9. Include header and footer
+WordPress on Routes is a plugin inspired mainly by Ruby micro-frameworks.
+It adds ability to add custom routes to your WordPress instance.
+Useful for form submissions, API-like features, etc.
+
+
+For full description, go to [https://github.com/markzero/wp-on-routes](https://github.com/markzero/wp-on-routes).
