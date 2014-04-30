@@ -16,11 +16,11 @@ class Agent {
 
     if (is_array($agent)) {
       return \_u::any($agent, function($agt) use($real_agent) {
-        return preg_match($agt, $real_agent);
+        return preg_match($agt->value, $real_agent);
       });
 
     } else {
-      return preg_match($agent, $real_agent);
+      return preg_match($agent->value, $real_agent);
     }
   }
 }

@@ -54,10 +54,43 @@ Remember, because of using namespaces your PHP installation version must be [>= 
 Extended Usage
 ===
 
+```php
+function wor_dump() {
+  var_dump($_GET);
+}
+
+add_action('wor_action', 'wor_dump');
+
+$routing = \WoR\Main::get_instance();
+
+$routing->add_routes(
+  array(
+    'get' => array(
+      'path' => '/foo/*/bar/:p1?',
+      'action' => 'wor_action',
+      'agent' => '/Firefox/',
+      'include_template' => true
+    )
+  )
+);
+```
+
 At this point there are several capabilities:
 
-1. Method declaration: GET, POST, DELETE, etc. In place where `'get'` is set.
-2. Defining path like in example above.
-3. Action callback: instead of `'body'` you can have `'action'` which will call any action defined by `add_action`. If both are defined, `action` takes precedence over `body`.
-4. Define/exclude `headers` as new array.
-5. Add / filter by agents.
+1. Add custom routes to your WordPress installation
+2. Set method GET/POST/DELETE etc.
+3. Set body (as text, or template) or action (using add/do_action). If both are defined, `action` takes precedence over `body`.
+4. Set header (e.g. 'Content-Type' => 'text/html; charset=UTF-8')
+5. Exclude header (e.g. 'Set-Cookie')
+6. Set parameters like `/my/route/:param1/:param2` or as splats `/foo/*/bar`
+7. Add agents or filter by agents, using regular expressions
+8. Agent filter for negative logic (e.g. `/^((?!Firefox).)*$/`, which tells "every browser except Firefox")
+9. Include header and footer
+
+Options you can set:
+1. `path` (string)
+2. `body` OR `action` (string)
+3. `agent` (string/regex)
+4. `include_template` (boolean; default: false)
+5. `headers` (array)
+5.1 `exclude` (array)

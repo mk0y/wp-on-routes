@@ -8,7 +8,7 @@
  * For docs, license, tests, and downloads, see: http://brianhaveri.github.com/Underscore.php
  */
 
-// Returns an instance of __ for OO-style calls
+// Returns an instance of _u for OO-style calls
 function _u($item=null) {
   $__ = new _u;
   if(func_num_args() > 0) $__->_wrapped = $item;
@@ -20,7 +20,7 @@ class _u {
   
   // Start the chain
   private $_chained = false; // Are we in a chain?
-  public function chain($item=null) {
+  public static function chain($item=null) {
     list($item) = self::_wrapArgs(func_get_args(), 1);
     
     $__ = (isset($this) && isset($this->_chained) && $this->_chained) ? $this : __($item);

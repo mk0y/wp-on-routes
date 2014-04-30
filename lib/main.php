@@ -19,7 +19,7 @@ class Main {
   }
 
   public static function init() {
-    add_action('send_headers', array(__CLASS__, 'wor_headers'));
+    //add_action('send_headers', array(__CLASS__, 'wor_headers'));
   }
 
   public static function wor_headers($wp_instance) {
@@ -27,11 +27,20 @@ class Main {
   }
 
   private function set_vars() {
+    if (!isset($_SERVER['REQUEST_METHOD']) || 
+        !isset($_SERVER['REQUEST_URI']) ||
+        !isset($_SERVER['HTTP_USER_AGENT'])
+    ) {
+      return;
+    }
+
     $this->current_request = new Route(array(
       'method'      => strtolower($_SERVER['REQUEST_METHOD']),
       'path'        => $_SERVER['REQUEST_URI'],
       'real_agent'  => $_SERVER['HTTP_USER_AGENT']
     ));
+
+    add_action('send_headers', array(__CLASS__, 'wor_headers'));
   }
 
   public function add_routes() {
