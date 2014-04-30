@@ -34,3 +34,10 @@ Useful for form submissions, API-like features, etc.
 
 
 For full description, go to [https://github.com/markzero/wp-on-routes](https://github.com/markzero/wp-on-routes).
+
+
+
+== Changelog ==
+
+= 0.1.0 =
+* Initial plugin version
