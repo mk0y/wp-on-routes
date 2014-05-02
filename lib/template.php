@@ -21,6 +21,8 @@ class Template {
       $route->path->set_splat_gets();
     }
 
+    header($_SERVER['SERVER_PROTOCOL'] . ' 200 Ok');
+
     if (is_bool($route->include_template) && $route->include_template) {
       self::print_wp($route);
 
