@@ -29,5 +29,7 @@ For basic and advanced usage examples, take a look at [https://github.com/markze
 
 Good old plugin installation applies here too - download it / clone it to `plugins/` dir, activate.
 
+If you want to clone it, here is the repository: [https://github.com/markzero/wp-on-routes](https://github.com/markzero/wp-on-routes)
+
 No UI involved.
 
