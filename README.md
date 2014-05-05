@@ -75,7 +75,7 @@ $routing->add_routes(
 );
 ```
 
-In example above, browser will answer with HTTP status 200, with following code, with header and footer included:
+In example above, if you target `/foo/a/b/c/bar/test`, browser will answer with HTTP status 200, with following code, with header and footer included:
 
 ```
 array (size=2)
