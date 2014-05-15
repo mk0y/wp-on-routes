@@ -3,7 +3,7 @@
 Plugin Name: WordPress on Routes
 Description: Add API-like functionality to your WordPress instance.
 Version: 0.1.0
-Plugin URI: http://wponroutes.com/
+Plugin URI: https://github.com/markzero/wp-on-routes
 Author: Marko Jakic
 Author URI: http://markojakic.net/
 Network: True
