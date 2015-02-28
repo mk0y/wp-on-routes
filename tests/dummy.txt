@@ -1,0 +1,44 @@
+This file contains data for routes to test. 
+Place the code below into your theme's functions.php and run phpunit
+from inside wp-on-routes plugin directory.
+
+
+$routing = \WoR\Main::get_instance();
+
+$routing->add_routes(
+  array(
+    'get' => array(
+      'path' => '/foo/bar',
+      'body' => 'Hello Baz!',
+    )
+  ),
+  array(
+    'post' => array(
+      'path' => '/foo/bar',
+      'body' => 'Hello Baz!',
+    )
+  ),
+  array(
+    'get' => array(
+      'path' => '/foo/bar/:param',
+      'action' => 'wor_params_intro'
+    )
+  ),
+  array(
+    'get' => array(
+      'path' => '/foo/bar/:param1/:param2',
+      'action' => 'wor_params_intro_2'
+    )
+  )
+);
+
+function wor_print() {
+  echo 'Param: ' . $_GET['param'];
+}
+
+function wor_print_2() {
+  echo 'Params: ' . $_GET['param1'] . ', ' . $_GET['param2'];
+}
+
+add_action('wor_params_intro', 'wor_print');
+add_action('wor_params_intro_2', 'wor_print_2');

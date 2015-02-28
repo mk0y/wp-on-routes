@@ -117,7 +117,9 @@ class Path {
   }
 
   public function get_dir() {
-    return $this->dirs[$this->dir_index];
+    if (isset($this->dirs[$this->dir_index])) {
+      return $this->dirs[$this->dir_index];
+    }
   }
 
   /**
