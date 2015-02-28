@@ -112,3 +112,10 @@ Options you can set:
 4. `include_template` (boolean; default: false)
 5. `headers` (array)
   + `exclude` (array)
+
+
+
+Tests
+===
+
+Reference to tests/dummy.txt to read how to test output of your WordPress website.
