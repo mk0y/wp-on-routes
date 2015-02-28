@@ -2,7 +2,7 @@
 /*
 Plugin Name: WordPress on Routes
 Description: Add API-like functionality to your WordPress instance.
-Version: 0.1.0
+Version: 0.2.0
 Plugin URI: https://github.com/markzero/wp-on-routes
 Author: Marko Jakic
 Author URI: http://markojakic.net/
@@ -34,7 +34,7 @@ if (defined('WP_INSTALLING') && WP_INSTALLING) {
 }
 
 
-define('WOR_VERSION', '0.1.0');
+define('WOR_VERSION', '0.2.0');
 define('WOR_PATH', dirname(__FILE__));
 
 if (version_compare(PHP_VERSION, "5.3", "<")) {
