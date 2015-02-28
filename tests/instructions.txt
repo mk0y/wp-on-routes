@@ -1,7 +1,10 @@
-This file contains data for routes to test. 
+This file contains data for routes to test.
+
 Place the code below into your theme's functions.php and run phpunit
-from inside wp-on-routes plugin directory.
-Before you run phpunit make sure to export WOR_SITE variable, e.g. `export WOR_SITE=http://wor.dev` from your command line interface.
+  from inside wp-on-routes plugin directory.
+
+Before you run phpunit make sure to export WOR_SITE variable,
+  e.g. `export WOR_SITE=http://wor.dev` from your command line interface.
 
 
 $routing = \WoR\Main::get_instance();
