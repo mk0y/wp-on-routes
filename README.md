@@ -118,4 +118,4 @@ Options you can set:
 Tests
 ===
 
-Reference to tests/dummy.txt to read how to test output of your WordPress website.
+Reference to tests/instructions.txt to read how to test output of your WordPress website.
