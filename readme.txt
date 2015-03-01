@@ -3,7 +3,7 @@ Contributors: markzero
 Tags: routes, path, HTTP method, custom paths, custom parameters, query, headers, exclude header, agent, filter agents
 Requires at least: 3.8
 Tested up to: 4.1.1
-Stable tag: 0.2.0
+Stable tag: 0.3.0
 
 This plugin adds API-like functionality to your WordPress instance.
 
