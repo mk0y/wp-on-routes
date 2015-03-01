@@ -120,5 +120,6 @@ Tests
 
 Reference to tests/instructions.txt to read how to test output of your WordPress website.
 
-I am using wp-cli to generate testing environment: https://github.com/wp-cli/wp-cli/wiki/Plugin-Unit-Tests
-So, before any testing run similar command: `bash bin/install-wp-tests.sh wor_test_db root root localhost latest`
+I am using wp-cli to generate testing environment: https://github.com/wp-cli/wp-cli/wiki/Plugin-Unit-Tests.
+
+So, before any testing run similar command: `bash bin/install-wp-tests.sh wor_test_db root root localhost latest`.
