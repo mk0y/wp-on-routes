@@ -33,6 +33,19 @@ $routing->add_routes(
       'path' => '/foo/bar/:param1/:param2',
       'action' => 'wor_params_intro_2'
     )
+  ),
+  array(
+    'get' => array(
+      'path' => '/red/green/blue/:param?',
+      'body' => 'no param'
+    )
+  ),
+  array(
+    'get' => array(
+      'path' => '/red/*/blue/:param?',
+      'body' => 'params & splats',
+      'action' => 'wor_params_splats'
+    )
   )
 );
 
@@ -44,5 +57,10 @@ function wor_print_2() {
   echo 'Params: ' . $_GET['param1'] . ', ' . $_GET['param2'];
 }
 
+function wor_print_3() {
+  echo 'Params & splats: ' . $_GET['param'] . ', ' . $_GET['splats'][0];
+}
+
 add_action('wor_params_intro', 'wor_print');
 add_action('wor_params_intro_2', 'wor_print_2');
+add_action('wor_params_splats', 'wor_print_3');
