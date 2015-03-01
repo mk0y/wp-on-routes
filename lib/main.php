@@ -19,11 +19,11 @@ class Main {
   }
 
   public static function init() {
-    //add_action('send_headers', array(__CLASS__, 'wor_headers'));
   }
 
   public static function wor_headers($wp_instance) {
     Template::delegate();
+    Template::delegate_predefined();
   }
 
   private function set_vars() {

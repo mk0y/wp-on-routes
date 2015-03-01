@@ -59,5 +59,28 @@ class Template {
           print('Unknown output.')
       );
   }
+
+
+  public static function delegate_predefined() {
+    if (!isset($_SERVER['REQUEST_URI'])) return;
+
+    $path = $_SERVER['REQUEST_URI'];
+    $way = new Way();
+    $result = '[]';
+
+    if (trailingslashit(strtolower(basename($path))) == 'posts.json') {
+      $result = $way->posts_json();
+    }
+
+    self::json_response($result);
+  }
+
+
+  private static function json_response($result) {
+    header($_SERVER['SERVER_PROTOCOL'] . ' 200 Ok');
+    header('Content-Type: application/json');
+    echo json_encode($result, JSON_PRETTY_PRINT);
+    exit;
+  }
 }
 
