@@ -2,7 +2,7 @@
 namespace WoR;
 
 /** Class for predefined routes like posts.json */
-class Way {
+class Jsonapi {
   public function posts_json() {
     $query = new \WP_Query(array(
       'post_type' => 'post',
