@@ -64,15 +64,14 @@ class Template {
   public static function delegate_predefined() {
     if (!isset($_SERVER['REQUEST_URI'])) return;
 
-    $path = $_SERVER['REQUEST_URI'];
-    $way = new Way();
+    $path = untrailingslashit($_SERVER['REQUEST_URI']);
+    $jsonapi = new Jsonapi();
     $result = '[]';
 
-    if (trailingslashit(strtolower(basename($path))) == 'posts.json') {
-      $result = $way->posts_json();
+    if (untrailingslashit(strtolower(basename($path))) == 'posts.json') {
+      $result = $jsonapi->posts_json();
+      self::json_response($result);
     }
-
-    self::json_response($result);
   }
 
 
