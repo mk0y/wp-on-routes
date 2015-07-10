@@ -1,5 +1,5 @@
 {
-  "name": "wp-on-routes",
+  "name": "markzero/wp-on-routes",
   "type": "wordpress-plugin",
   "license": "MIT",
   "description": "WordPress plugin that adds API-like functionality by allowing you to add custom routes",
